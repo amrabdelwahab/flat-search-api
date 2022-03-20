@@ -5,7 +5,9 @@ jobs:
   verify:
     name: Build and test
     env:
-      DATABASE_URL: postgres://postgres:@localhost:5432/test
+      DATABASE_HOST: localhost
+      DATABASE_USERNAME: rails_github_actions
+      DATABASE_PASSWORD: postgres
       RAILS_ENV: test
     runs-on: ubuntu-latest
 
