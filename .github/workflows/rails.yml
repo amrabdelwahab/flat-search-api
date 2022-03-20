@@ -33,6 +33,10 @@ jobs:
       - name: Install dependencies
         run: bundle install
       - name: setup test database
-        run: rails db:create && rails db:migrate
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
       - name: Run tests & lint
-        run: rspec && rubocop
+        run: |
+          bundle exec rspec 
+          bundle exec rubocop
